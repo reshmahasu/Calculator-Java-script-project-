@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>calculator2</title>
+<link rel="stylesheet" type="text/css" href="C:\Users\ELCOT\Desktop\javascript\css\calculator2.css">
+</head>
+<body>
+
+<div class="calculator">
+    <input type="text" placeholder="0" id="result">
+
+    <button onclick="clr()" class="operator">Cl</button>
+    <button onclick="dlt()" class="operator">DEL</button>
+    <button onclick="display('%')" class="operator">%</button>
+    <button onclick="display('/')" class="operator">/</button>
+
+    <button onclick="display('7')">7</button>
+    <button onclick="display('8')">8</button>
+    <button onclick="display('9')">9</button>
+    <button onclick="display('*')" class="operator">*</button>
+
+    <button onclick="display('4')">4</button>
+    <button onclick="display('5')">5</button>
+    <button onclick="display('6')">6</button>
+    <button onclick="display('-')" class="operator">-</button>
+
+    <button onclick="display('1')">1</button>
+    <button onclick="display('2')">2</button>
+    <button onclick="display('3')">3</button>
+    <button onclick="display('+')" class="operator">+</button>
+
+    <button onclick="display('-')">.</button>
+    <button onclick="display('0')">0</button>
+    <button onclick="calculate()" class="equal">=</button>
+</div>
+<script>
+let resultBox=document.getElementById("result");
+function display(num){
+    resultBox.value+=num;
+}
+function calculate(){
+    try{
+       resultBox.value=eval(resultBox.value);
+      }
+    catch(err){
+       window.alert("invalied");
+      }
+}
+function clr(){
+    resultBox.value="0";
+}
+function dlt(){
+    resultBox.value=resultBox.value.slice(0,-1);
+}
+</script>
+</body>
+</html>
